@@ -17,4 +17,5 @@ public class DBconst {
     public static final String RECIPE_TIME="Time";
     public static final String RECIPE_DIFFICULTY="Difficulty";
     public static final String RECIPE_TYPE="Type";
+    public static final String RECIPE_IMAGE_LINK="Image_Link";
 }

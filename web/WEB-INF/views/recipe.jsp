@@ -29,7 +29,7 @@
 
     <main class="px-3">
 
-        <div class="text-center"><img alt="Вариант подачи блюда" class="img-thumbnail" src="images/IMG_20170807_210458_987.jpg">
+        <div class="text-center"><img alt="Вариант подачи блюда" class="img-thumbnail" src="${Recipe.imageLink}">
             <h1>${Recipe.name}</h1>
             <h1></h1>
             <h5>Продукты: ${Recipe.ingredients}</h5>

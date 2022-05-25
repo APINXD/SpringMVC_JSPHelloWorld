@@ -4,6 +4,7 @@ import com.searchdishes.springMVC.model.User;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DatabaseHandler extends DB {
@@ -73,8 +74,9 @@ public class DatabaseHandler extends DB {
                 + DBconst.RECIPE_NAME + ","+ DBconst.RECIPE_CONTENT +"," +
                 DBconst.RECIPE_INGREDIENTS + "," + DBconst.RECIPE_KITCHEN +
                 ","+ DBconst.RECIPE_TIME + "," + DBconst.RECIPE_DIFFICULTY +
-                ","+ DBconst.RECIPE_TYPE+ ","+ DBconst.RECIPE_USER_ID+" )" +
-                "VALUES(?,?,?,?,?,?,?,?)";
+                ","+ DBconst.RECIPE_TYPE+ ","+ DBconst.RECIPE_USER_ID+
+                "," + DBconst.RECIPE_IMAGE_LINK +" )" +
+                "VALUES(?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement prSt = getDbConnection().prepareStatement(insert);
             prSt.setString(1,recipe.getName());
@@ -85,12 +87,96 @@ public class DatabaseHandler extends DB {
             prSt.setString(6,recipe.getDifficulty());
             prSt.setString(7,recipe.getType());
             prSt.setInt(8,id);
+            prSt.setString(9,recipe.getImageLink());
             prSt.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public List<Recipe> searchRecipes(Recipe recipe){
+        ResultSet resSet = null;
+        List<Recipe> temp = new ArrayList<Recipe>();
+        String y="";
+        String select = "SELECT * FROM " + DBconst.RECIPE + " WHERE " +
+                DBconst.RECIPE_INGREDIENTS + " LIKE ? AND " + DBconst.RECIPE_TIME + "=? AND "
+                + DBconst.RECIPE_TYPE + "=? AND " + DBconst.RECIPE_DIFFICULTY + "=? AND "+
+                DBconst.RECIPE_KITCHEN + "=? AND " + DBconst.RECIPE_NAME + "=?";
+        try {
+            String[] x = recipe.getIngredients().split(" ");
+            if (x.length!=1 && x.length!=0){
+                for (int i = 0; i < x.length; i++) {
+                    x[i] = "%" + x[i] + "%";
+                    y = y.concat(x[i]);
+                }
+            }
+            else {
+                y = "%"+recipe.getIngredients()+"%";
+            }
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1, y);
+            prSt.setString(2, recipe.getTime());
+            prSt.setString(3, recipe.getType());
+            prSt.setString(4, recipe.getDifficulty());
+            prSt.setString(5, recipe.getKitchen());
+            prSt.setString(6, recipe.getName());
+            resSet = prSt.executeQuery();
+            while (resSet.next()) {
+                temp.add(new Recipe(resSet.getString(2),resSet.getString(3),
+                        resSet.getString(4),resSet.getString(6),
+                        resSet.getString(7),resSet.getString(8),
+                        resSet.getString(9),resSet.getString(10)));
+            }
+            return temp;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return temp;
+    }
+
+    public Recipe searchRecipe(Recipe recipe){
+        ResultSet resSet = null;
+        Recipe temp = new Recipe();
+        String y="";
+        String select = "SELECT * FROM " + DBconst.RECIPE + " WHERE " +
+                DBconst.RECIPE_INGREDIENTS + " LIKE ? AND " + DBconst.RECIPE_TIME + "=? AND "
+                + DBconst.RECIPE_TYPE + "=? AND " + DBconst.RECIPE_DIFFICULTY + "=? AND "+
+                DBconst.RECIPE_KITCHEN + "=?";
+        try {
+            String[] x = recipe.getIngredients().split(" ");
+            if (x.length!=1 && x.length!=0){
+                for (int i = 0; i < x.length; i++) {
+                    x[i] = "%" + x[i] + "%";
+                    y = y.concat(x[i]);
+                }
+            }
+            else {
+                y = "%"+recipe.getIngredients()+"%";
+            }
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1, y);
+            prSt.setString(2, recipe.getTime());
+            prSt.setString(3, recipe.getType());
+            prSt.setString(4, recipe.getDifficulty());
+            prSt.setString(5, recipe.getKitchen());
+            resSet = prSt.executeQuery();
+            while (resSet.next()) {
+                temp = new Recipe(resSet.getString(2),resSet.getString(3),
+                        resSet.getString(4),resSet.getString(6),
+                        resSet.getString(7),resSet.getString(8),
+                        resSet.getString(9),resSet.getString(10));
+            }
+            return temp;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return temp;
     }
 
     public List<Recipe> getRecipes(){
@@ -104,7 +190,7 @@ public class DatabaseHandler extends DB {
                 Recipe temp = new Recipe(resSet.getString(2),resSet.getString(3),
                         resSet.getString(4),resSet.getString(6),
                         resSet.getString(7),resSet.getString(8),
-                        resSet.getString(9),"images/IMG_20170807_210458_987.jpg");
+                        resSet.getString(9),resSet.getString(10));
                 recipes.add(temp);
             }
             return recipes;

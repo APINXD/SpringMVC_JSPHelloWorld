@@ -60,9 +60,9 @@
                             </div>
                             <select class="custom-select" id="inputGroupSelect01">
                                 <option selected>Выберите...</option>
-                                <option value="1">Русская</option>
-                                <option value="2">Японская</option>
-                                <option value="3">Итальянская</option>
+                                <option value="Русская">Русская</option>
+                                <option value="Японская">Японская</option>
+                                <option value="Итальянская">Итальянская</option>
                             </select>
                         </div>
                     </div>
@@ -73,10 +73,10 @@
                             </div>
                             <select class="custom-select" id="inputGroupSelect02">
                                 <option selected>Выберите...</option>
-                                <option value="1">до 15 мин.</option>
-                                <option value="2">до 30 мин.</option>
-                                <option value="3">до 45 мин.</option>
-                                <option value="4">до 60 мин.</option>
+                                <option value="до 15 мин.">до 15 мин.</option>
+                                <option value="до 30 мин.">до 30 мин.</option>
+                                <option value="до 45 мин.">до 45 мин.</option>
+                                <option value="до 60 мин.">до 60 мин.</option>
                             </select>
                         </div>
                     </div>
@@ -87,9 +87,9 @@
                             </div>
                             <select class="custom-select" id="inputGroupSelect03">
                                 <option selected>Выберите...</option>
-                                <option value="1">Легкая</option>
-                                <option value="2">Средняя</option>
-                                <option value="3">Сложная</option>
+                                <option value="Легкая">Легкая</option>
+                                <option value="Средняя">Средняя</option>
+                                <option value="Сложная">Сложная</option>
                             </select>
                         </div>
                     </div>
@@ -100,12 +100,12 @@
                             </div>
                             <select class="custom-select" id="inputGroupSelect04">
                                 <option selected>Выберите...</option>
-                                <option value="1">Десерт</option>
-                                <option value="2">Завтрак</option>
-                                <option value="3">Первое</option>
-                                <option value="4">Второе</option>
-                                <option value="5">Закуска</option>
-                                <option value="6">Напиток</option>
+                                <option value="Десерт">Десерт</option>
+                                <option value="Завтрак">Завтрак</option>
+                                <option value="Первое">Первое</option>
+                                <option value="Второе">Второе</option>
+                                <option value="Закуска">Закуска</option>
+                                <option value="Напиток">Напиток</option>
                             </select>
                         </div>
                     </div>
