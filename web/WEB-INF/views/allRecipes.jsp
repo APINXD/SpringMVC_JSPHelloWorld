@@ -38,6 +38,7 @@
                     <spring:input class="form-control" aria-label="With textarea" placeholder="яйца ,молоко, сыр..." path="ingredients"/>
                 </div>
             </div>
+
                         <div class="row">
                             <div class="col-md-auto">
                                 <div class="input-group mb-3">
@@ -111,8 +112,11 @@
                         </div>
         </div>
                 </spring:form>
+    <spring:form modelAttribute="Recipes" action="recipe">
+
     <div class="album py-5 bg-dark ">
         <div class="container">
+
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
@@ -122,12 +126,12 @@
                             <p >${Recipes.get(0).ingredients}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <a class="btn btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
 <%--                                <div class="btn-group">--%>
 <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
 <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
 <%--                                </div>--%>
-                                <small class="text-muted">${Recipes.get(0).time}</small>
+                                <small class="text-muted" id="time">${Recipes.get(0).time}</small>
                             </div>
                         </div>
                     </div>
@@ -288,6 +292,7 @@
             </div>
         </div>
     </div>
+    </spring:form>
 
 </main></div>
 </body>

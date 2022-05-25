@@ -108,6 +108,7 @@ public class MainController {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("allRecipes");
         DatabaseHandler dbHandler = new DatabaseHandler();
+        String output = "";
         modelAndView.addObject("Recipes", dbHandler.searchRecipes(recipe));
         return modelAndView;
     }
@@ -158,7 +159,7 @@ public class MainController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/recipe")
+    @RequestMapping(value = "/recipe", method = RequestMethod.POST)
     public ModelAndView Recipe(@ModelAttribute("Recipes")List<Recipe> recipes){
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("recipe");
