@@ -106,7 +106,6 @@
             <spring:input class="form-control" aria-label="With textarea" placeholder="https://" path="imageLink"/>
           </div>
         </div>
-
         <div class="row">
         <div class="mb-3">
             <h5>Введите поэтапный рецепт</h5>

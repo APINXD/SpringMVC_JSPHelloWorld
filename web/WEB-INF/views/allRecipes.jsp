@@ -138,96 +138,36 @@
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image height="225" width="100%"  href="${Recipes.get(1).imageLink}"></image></svg>
                         <div class="card-body text-dark">
-                            <h5>Название</h5>
-                            <p >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5>${Recipes.get(1).name}</h5>
+                            <p >${Recipes.get(1).ingredients}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                <%--                                <div class="btn-group">--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
-                                <%--                                </div>--%>
-                                <small class="text-muted">до 15 минут</small>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                    <%--                                <div class="btn-group">--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
+                                    <%--                                </div>--%>
+                                <small class="text-muted" id="time">${Recipes.get(1).time}</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image height="225" width="100%"  href="${Recipes.get(2).imageLink}"></image></svg>
                         <div class="card-body text-dark">
-                            <h5>Название</h5>
-                            <p >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5>${Recipes.get(2).name}</h5>
+                            <p >${Recipes.get(2).ingredients}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                <%--                                <div class="btn-group">--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
-                                <%--                                </div>--%>
-                                <small class="text-muted">до 15 минут</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body text-dark">
-                            <h5>Название</h5>
-                            <p >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                <%--                                <div class="btn-group">--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
-                                <%--                                </div>--%>
-                                <small class="text-muted">до 15 минут</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body text-dark">
-                            <h5>Название</h5>
-                            <p >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                <%--                                <div class="btn-group">--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
-                                <%--                                </div>--%>
-                                <small class="text-muted">до 15 минут</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-                        <div class="card-body text-dark">
-                            <h5>Название</h5>
-                            <p >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                <%--                                <div class="btn-group">--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
-                                <%--                                </div>--%>
-                                <small class="text-muted">до 15 минут</small>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                    <%--                                <div class="btn-group">--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
+                                    <%--                                </div>--%>
+                                <small class="text-muted" id="time">${Recipes.get(2).time}</small>
                             </div>
                         </div>
                     </div>
@@ -235,21 +175,76 @@
 
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image height="225" width="100%"  href="${Recipes.get(3).imageLink}"></image></svg>
                         <div class="card-body text-dark">
-                            <h5>Название</h5>
-                            <p >This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5>${Recipes.get(3).name}</h5>
+                            <p >${Recipes.get(3).ingredients}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Подробнее</button>
-                                <%--                                <div class="btn-group">--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
-                                <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
-                                <%--                                </div>--%>
-                                <small class="text-muted">до 15 минут</small>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                    <%--                                <div class="btn-group">--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
+                                    <%--                                </div>--%>
+                                <small class="text-muted" id="time">${Recipes.get(3).time}</small>
                             </div>
-                        </div>                    </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image height="225" width="100%"  href="${Recipes.get(4).imageLink}"></image></svg>
+                        <div class="card-body text-dark">
+                            <h5>${Recipes.get(4).name}</h5>
+                            <p >${Recipes.get(4).ingredients}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                    <%--                                <div class="btn-group">--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
+                                    <%--                                </div>--%>
+                                <small class="text-muted" id="time">${Recipes.get(4).time}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image height="225" width="100%"  href="${Recipes.get(5).imageLink}"></image></svg>
+                        <div class="card-body text-dark">
+                            <h5>${Recipes.get(5).name}</h5>
+                            <p >${Recipes.get(5).ingredients}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                    <%--                                <div class="btn-group">--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
+                                    <%--                                </div>--%>
+                                <small class="text-muted" id="time">${Recipes.get(5).time}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text><image height="225" width="100%"  href="${Recipes.get(6).imageLink}"></image></svg>
+                        <div class="card-body text-dark">
+                            <h5>${Recipes.get(6).name}</h5>
+                            <p >${Recipes.get(6).ingredients}</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">♥ В избранное</button>
+                                <a class="btn btn-sm btn-outline-secondary" id="1" href="${pageContext.request.contextPath}/recipe" >Подробнее</a>
+                                    <%--                                <div class="btn-group">--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>--%>
+                                    <%--                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>--%>
+                                    <%--                                </div>--%>
+                                <small class="text-muted" id="time">${Recipes.get(6).time}</small>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="card shadow-sm">

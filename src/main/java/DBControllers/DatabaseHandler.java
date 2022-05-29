@@ -6,6 +6,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 public class DatabaseHandler extends DB {
     Connection dbConnection;
@@ -139,14 +140,17 @@ public class DatabaseHandler extends DB {
     }
 
     public Recipe searchRecipe(Recipe recipe){
+        final Random random = new Random();
         ResultSet resSet = null;
         Recipe temp = new Recipe();
+        List<Recipe> temp1 = new ArrayList<Recipe>();
         String y="";
         String select = "SELECT * FROM " + DBconst.RECIPE + " WHERE " +
                 DBconst.RECIPE_INGREDIENTS + " LIKE ? AND " + DBconst.RECIPE_TIME + "=? AND "
                 + DBconst.RECIPE_TYPE + "=? AND " + DBconst.RECIPE_DIFFICULTY + "=? AND "+
                 DBconst.RECIPE_KITCHEN + "=?";
         try {
+
             String[] x = recipe.getIngredients().split(" ");
             if (x.length!=1 && x.length!=0){
                 for (int i = 0; i < x.length; i++) {
@@ -169,7 +173,9 @@ public class DatabaseHandler extends DB {
                         resSet.getString(4),resSet.getString(6),
                         resSet.getString(7),resSet.getString(8),
                         resSet.getString(9),resSet.getString(10));
+                temp1.add(temp);
             }
+            temp=temp1.get(random.nextInt(temp1.size()));
             return temp;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
