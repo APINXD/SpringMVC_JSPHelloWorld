@@ -31,7 +31,6 @@
             </div>
         </header>
 
-
     <main class="px-3">
         <%--@elvariable id="Recipe" type="com.searchdishes.springMVC.model.Recipe"--%>
         <spring:form class="container" action="generate-recipe" method="post" modelAttribute="Recipe">
@@ -54,6 +53,9 @@
                             <option value="Русская">Русская</option>
                             <option value="Японская">Японская</option>
                             <option value="Итальянская">Итальянская</option>
+                            <option value="Американская">Американская</option>
+                            <option value="Французская">Французская</option>
+                            <option value="Татарская">Татарская</option>
                         </spring:select>
                     </div>
                 </div>

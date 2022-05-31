@@ -6,6 +6,8 @@ import com.searchdishes.springMVC.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.http.server.ServletServerHttpResponse;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -92,7 +94,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/all-recipes")
-    public ModelAndView allRecipes(@ModelAttribute("userJSP") User user) {
+    public ModelAndView allRecipes(@ModelAttribute("userJSP") User user, ServletServerHttpResponse response) {
+//        response.setHeader("Set-Cookie", "test=value; Path=/");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("allRecipes");
         modelAndView.addObject("userJSP", user);

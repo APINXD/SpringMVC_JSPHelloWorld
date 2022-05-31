@@ -50,6 +50,9 @@
                                         <option value="Русская">Русская</option>
                                         <option value="Японская">Японская</option>
                                         <option value="Итальянская">Итальянская</option>
+                                        <option value="Американская">Итальянская</option>
+                                        <option value="Французская">Итальянская</option>
+                                        <option value="Татарская">Итальянская</option>
                                     </spring:select>
                                 </div>
                             </div>

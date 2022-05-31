@@ -63,6 +63,9 @@
                                 <option value="Русская">Русская</option>
                                 <option value="Японская">Японская</option>
                                 <option value="Итальянская">Итальянская</option>
+                                <option value="Американская">Итальянская</option>
+                                <option value="Французская">Итальянская</option>
+                                <option value="Татарская">Итальянская</option>
                             </select>
                         </div>
                     </div>
@@ -135,7 +138,6 @@
 
         <div class="album py-5 bg-dark ">
             <div class="container">
-
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <div class="col">
                         <div class="card shadow-sm">

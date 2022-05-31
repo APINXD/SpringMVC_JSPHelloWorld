@@ -145,38 +145,73 @@ public class DatabaseHandler extends DB {
         Recipe temp = new Recipe();
         List<Recipe> temp1 = new ArrayList<Recipe>();
         String y="";
-        String select = "SELECT * FROM " + DBconst.RECIPE + " WHERE " +
-                DBconst.RECIPE_INGREDIENTS + " LIKE ? AND " + DBconst.RECIPE_TIME + "=? AND "
-                + DBconst.RECIPE_TYPE + "=? AND " + DBconst.RECIPE_DIFFICULTY + "=? AND "+
-                DBconst.RECIPE_KITCHEN + "=?";
-        try {
 
-            String[] x = recipe.getIngredients().split(" ");
-            if (x.length!=1 && x.length!=0){
-                for (int i = 0; i < x.length; i++) {
-                    x[i] = "%" + x[i] + "%";
-                    y = y.concat(x[i]);
+        String time = DBconst.RECIPE_TIME;
+        String type = DBconst.RECIPE_TYPE;
+        String difficulty = DBconst.RECIPE_DIFFICULTY;
+        String kitchen = DBconst.RECIPE_KITCHEN;
+
+        String recipeTime = recipe.getTime();
+        String recipeType = recipe.getType();
+        String recipeDifficulty = recipe.getDifficulty();
+        String recipeKitchen = recipe.getKitchen();
+        if (recipeTime.equals("Выберите...")){
+            time = "'Time'";
+            recipeTime=time;
+        }
+        if (recipeType.equals("Выберите...")){
+            type = "'Type'";
+            recipeType=type;
+        }
+        if (recipeDifficulty.equals("Выберите...")){
+            difficulty = "'Difficulty'";
+            recipeDifficulty=difficulty;
+        }
+        if (recipeKitchen.equals("Выберите...")){
+            kitchen = "'Kitchen'";
+            recipeKitchen=kitchen;
+        }
+
+        String select = "SELECT * FROM " + DBconst.RECIPE + " WHERE " +
+                DBconst.RECIPE_INGREDIENTS + " LIKE ? AND " + time + "=? AND "
+                + type + "=? AND " + difficulty + "=? AND "+
+                kitchen + "=?";
+        try {
+            if (recipe.getIngredients().equals("яйца ,молоко, сыр...")) {
+                y = "%%";
+            } else {
+                String[] x = recipe.getIngredients().split(" ");
+                if (x.length != 1 && x.length != 0) {
+                    for (int i = 0; i < x.length; i++) {
+                        x[i] = "%" + x[i] + "%";
+                        y = y.concat(x[i]);
+                    }
+                } else {
+                    y = "%" + recipe.getIngredients() + "%";
                 }
-            }
-            else {
-                y = "%"+recipe.getIngredients()+"%";
             }
             PreparedStatement prSt = getDbConnection().prepareStatement(select);
             prSt.setString(1, y);
-            prSt.setString(2, recipe.getTime());
-            prSt.setString(3, recipe.getType());
-            prSt.setString(4, recipe.getDifficulty());
-            prSt.setString(5, recipe.getKitchen());
+            prSt.setString(2, recipeTime);
+            prSt.setString(3, recipeType);
+            prSt.setString(4, recipeDifficulty);
+            prSt.setString(5, recipeKitchen);
             resSet = prSt.executeQuery();
             while (resSet.next()) {
-                temp = new Recipe(resSet.getString(2),resSet.getString(3),
-                        resSet.getString(4),resSet.getString(6),
-                        resSet.getString(7),resSet.getString(8),
-                        resSet.getString(9),resSet.getString(10));
+                temp = new Recipe(resSet.getString(2), resSet.getString(3),
+                        resSet.getString(4), resSet.getString(6),
+                        resSet.getString(7), resSet.getString(8),
+                        resSet.getString(9), resSet.getString(10));
                 temp1.add(temp);
             }
-            temp=temp1.get(random.nextInt(temp1.size()));
-            return temp;
+            if (temp1.size() != 0) {
+                temp = temp1.get(random.nextInt(temp1.size()));
+                return temp;
+            }
+            else{
+                List<Recipe> recipes = getRecipes();
+                return recipes.get(random.nextInt(recipes.size()));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {
