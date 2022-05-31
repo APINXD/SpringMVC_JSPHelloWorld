@@ -6,14 +6,13 @@ import com.searchdishes.springMVC.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.http.server.ServletServerHttpResponse;
 
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-
+@SessionAttributes(value = "Recipe") //или @SessionAttributes("user")
 @Controller
 public class MainController {
 
@@ -94,7 +93,7 @@ public class MainController {
     }
 
     @RequestMapping(value = "/all-recipes")
-    public ModelAndView allRecipes(@ModelAttribute("userJSP") User user, ServletServerHttpResponse response) {
+    public ModelAndView allRecipes(@ModelAttribute("userJSP") User user) {
 //        response.setHeader("Set-Cookie", "test=value; Path=/");
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("allRecipes");
@@ -143,6 +142,24 @@ public class MainController {
 //            return modelAndView;
 //        }
     }
+
+//    @Bean
+//    @Scope(
+//            value = WebApplicationContext.SCOPE_SESSION,
+//            proxyMode = ScopedProxyMode.TARGET_CLASS)
+//    public TodoList todos() {
+//        return new TodoList();
+//    }
+
+//    @Controller
+//    @RequestMapping("/scopedproxy")
+//    public class TodoControllerWithScopedProxy {
+//
+//        private TodoList todos;
+//
+//        // constructor and request mappings
+//    }
+
 
     @RequestMapping(value = "/new-recipe")
     public ModelAndView newRecipe() {
